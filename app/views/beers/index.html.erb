@@ -1,0 +1,21 @@
+<h1>Beers For: <%= current_user.full_name %></h1>
+<hr />
+<div class='text-center'>
+ <% if current_user.cut_off? %>
+   <h3 class='danger-text'>Go home <%= current_user.full_name %>, You're drunk! </h3>
+ <% else %>
+  <%= link_to 'Grab A Beer', new_beer_path, class: 'btn btn-large btn-warning' %>
+
+  <% if @beers.any? %>
+   <div class='row'>
+    <% @beers.each do |beer| %>
+     <div class="jumbotron beer col-xs-12 col-sm-6">
+       <h1 class='truncated-text'><%= beer.name %></h1>
+       <%= link_to 'Show Beer', beer, class: 'btn btn-primary' %>
+      </div>
+   <% end %>
+  </div>
+
+<% else %>
+  <h3> Get Drunk Dude! Grab a Beer!</h3>
+<% end %>

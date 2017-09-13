@@ -1,0 +1,11 @@
+.beer {
+  height: 350px;
+  .truncated-text {
+    max-width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+}
+
